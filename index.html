@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="canva.css" />
+    <title>PixelArt</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <button class="btn">Reset</button>
+      <input type="color" value="#00eeff" class="color" />
+      <input type="number" value="30" class="size" />
+    </div>
+    <div class="container">
+      <div class="pixelGrid"></div>
+
+      <img
+        src="Bilder/istockphoto-909772478-612x612.jpg"
+        id="pixelitimg"
+        alt=""
+      />
+
+      <canvas id="pixelitcanvas"></canvas>
+    </div>
+
+    <script src="pixelit.js"></script>
+    <script>
+      const config = {
+        to: document.getElementById("pixelitcanvas"),
+        //defaults to document.getElementById("pixelitcanvas")
+        from: document.getElementById("pixelitimg"),
+        //defaults to document.getElementById("pixelitimg")
+        scale: 8,
+        //from 0-50, defaults to 8
+        //defaults to a fixed pallete
+        maxHeight: 500,
+        //defaults to null
+        maxWidth: 500,
+        //defaults to null
+      };
+      const px = new pixelit(config);
+      px.draw().pixelate();
+    </script>
+    <script src="pixelit.js"></script>
+    <script src="pixelit.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
