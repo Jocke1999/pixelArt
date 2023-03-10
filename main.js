@@ -1,14 +1,24 @@
 const container = document.querySelector('.pixelGrid')
-const sizeEl = document.querySelector('.size')
-let size = sizeEl.value
+const rowsEl = document.querySelector('.rows')
+const columnsEl = document.querySelector('.cols')
 const color = document.querySelector('.color')
 const resetBtn = document.querySelector('.btn')
+const canvas = document.querySelector('canvas')
+const canvasWidth = canvas.offsetWidth
+const canvasHeight = canvas.offsetHeight
+let rows = (Math.floor(canvasHeight / 20) * 20) / 20
+let columns = (Math.floor(canvasWidth / 20) * 20) / 20
 
 let draw = false
 
-function populate(size) {
-  container.style.setProperty('--size', size)
-  for (let i = 0; i < size * size; i++) {
+function populate(rows, columns) {
+    container.style.setProperty('--rows', rows)
+    container.style.setProperty('--cols', columns)
+    container.style.width = Math.floor(canvasWidth / 20) * 20 + 'px'
+    container.style.height = Math.floor(canvasHeight / 20) * 20 + 'px'
+    canvas.style.width = Math.floor(canvasWidth / 20) * 20 + 'px'
+    canvas.style.height = Math.floor(canvasHeight / 20) * 20 + 'px'
+  for (let i = 0; i < rows * columns; i++) {
     const div = document.createElement('div')
     div.classList.add('pixel')
 
@@ -33,14 +43,21 @@ window.addEventListener("mouseup", function(){
 
 function reset(){
     container.innerHTML = ''
-    populate(size)
+    populate(rows, columns)
 }
 
 resetBtn.addEventListener('click', reset)
 
-sizeEl.addEventListener('keyup', function(){
-    size = sizeEl.value
+rowsEl.addEventListener('keyup', function(){
+    rows = rowsEl.value
+    columns = columnsEl.value
     reset()
 })
 
-populate(size)
+columnsEl.addEventListener('keyup', function () {
+    rows = rowsEl.value
+    columns = columnsEl.value
+    reset()
+})
+
+populate(rows, columns)

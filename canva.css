@@ -15,8 +15,7 @@ body {
   flex-direction: column;
 }
 
-.navbar,
-.pixelGrid {
+.navbar{
   background-color: rgb(28, 28, 29);
   width: 800px;
   border-radius: 3px;
@@ -40,15 +39,19 @@ input {
 }
 
 .pixelGrid {
-  --size: 4;
+  --rows: 4;
+  --cols: 4;
   height: 800px;
   display: grid;
-  grid-template-columns: repeat(var(--size), 1fr);
-  grid-template-rows: repeat(var(--size), 1fr);
-  gap: 3px;
-  padding: 3px;
+  grid-template-columns: repeat(var(--cols), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  position: relative;
+  z-index: 1;
+  opacity: 0.8;
+  background-color: rgb(28, 28, 29);
+  border-radius: 3px;
 }
 .pixel {
   background-color: rgb(61, 61, 61);
-  border-radius: 2px;
+  border: 1px solid rgb(28, 28, 29);
 }

@@ -229,7 +229,7 @@ class pixelit {
     tempContext.drawImage(this.drawfrom, 0, 0, scaledW, scaledH);
     document.body.appendChild(tempCanvas);
     //configs to pixelate
-    this.ctx.mozImageSmoothingEnabled = false;
+    this.ctx.ImageSmoothingEnabled = false;
     this.ctx.webkitImageSmoothingEnabled = false;
     this.ctx.imageSmoothingEnabled = false;
 
@@ -266,8 +266,8 @@ class pixelit {
       scaledH,
       0,
       0,
-      finalWidth, //+ Math.max(24, 25 * this.scale),
-      finalHeight //+ Math.max(24, 25 * this.scale)
+      this.drawfrom.naturalWidth, 
+      this.drawfrom.naturalHeight
     );
     //remove temp element
     tempCanvas.remove();

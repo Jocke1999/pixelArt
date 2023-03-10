@@ -1,13 +1,9 @@
 .container {
   position: relative;
 }
-.container img {
-  z-index: 1;
-  position: absolute;
-}
 
 .container canvas {
-  z-index: 10;
   position: absolute;
-  opacity: 0.3;
+  top: 0;
+  left: 0;
 }
