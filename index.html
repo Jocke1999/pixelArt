@@ -12,14 +12,14 @@
     <div class="navbar">
       <button class="btn">Reset</button>
       <input type="color" value="#00eeff" class="color" />
-      <input type="number" value="51" class="rows" />
-      <input type="number" value="70" class="cols" />
+      <input type="number" value="20" class="size" />
+      <h2><-- Clean Canvas size</h2>
     </div>
     <div class="container">
       <div class="pixelGrid"></div>
 
       <img
-        src="cassandra-canady-big-werebear-sm-clc2019.jpg"
+        src=""
         id="pixelitimg"
         alt=""
       />
@@ -27,29 +27,11 @@
       <canvas id="pixelitcanvas"></canvas>
     </div>
 
-    <form action="/action_page.php">
-      <input type="file" id="myFile" name="filename">
-      <input type="submit">
-    </form>
+    <input type="file" id="fileInput" />
+    <img id="previewImage" src="#" alt="Preview Image" />
+    <button id="submitButton">Submit</button>    
 
     <script src="pixelit.js"></script>
-    <script>
-      const config = {
-        to: document.getElementById("pixelitcanvas"),
-        //defaults to document.getElementById("pixelitcanvas")
-        from: document.getElementById("pixelitimg"),
-        //defaults to document.getElementById("pixelitimg")
-        scale: 10,
-        //from 0-50, defaults to 8
-        //defaults to a fixed pallete
-        maxHeight: 800,
-        //defaults to null
-        maxWidth: 800
-        //defaults to null
-      };
-      const px = new pixelit(config);
-      px.draw().pixelate();
-    </script>
     <script src="pixelit.min.js"></script>
     <script src="main.js"></script>
   </body>

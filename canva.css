@@ -8,7 +8,7 @@ body {
   height: 100%;
 }
 body {
-  background-color: blueviolet;
+  background-color:antiquewhite;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,9 +39,11 @@ input {
 }
 
 .pixelGrid {
+  --size: 4;
   --rows: 4;
   --cols: 4;
   height: 800px;
+  width: 800px;
   display: grid;
   grid-template-columns: repeat(var(--cols), 1fr);
   grid-template-rows: repeat(var(--rows), 1fr);
